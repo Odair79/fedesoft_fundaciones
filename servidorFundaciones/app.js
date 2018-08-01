@@ -7,6 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var estudianteRouter=require('./routes/estudianteRouter');
+var fundations=require('./routes/fundations');
 var mongoose=require('mongoose');
 var config=require('./config');
 var db=mongoose.connect('mongodb://localhost:27017/claseServidor');
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/asdfs',estudianteRouter)
+app.use('/fundations',fundations)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
