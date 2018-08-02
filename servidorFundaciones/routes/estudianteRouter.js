@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-
+var authenticate = require('../authenticate');
 const estudianteRouter = express.Router();
 
 estudianteRouter.use(bodyParser.json());
@@ -12,7 +12,7 @@ estudianteRouter.route('/')
     res.setHeader('Content-Type', 'text/plain');
     next();
 })
-.get((req,res,next) => {
+.get(authenticate.verifyUser,(req,res,next) => {
     res.end('Este metodo retornara la lista de estudiantes');
 })
 .post((req, res, next) => {
