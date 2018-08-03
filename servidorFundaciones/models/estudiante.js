@@ -14,13 +14,11 @@ var commentSchema = new Esquema({
     },
     author: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Usuarios'
+        ref: 'Usuarios' /// Aqui debemos modificar por nuestro modelo de usuarios 
     }
 }, {
     timestamps: true
 });
-
-
 var esquemaEstudiante= new Esquema({
     nombre:{
         type:String,
@@ -29,7 +27,8 @@ var esquemaEstudiante= new Esquema({
     apellido:{
         type:String,
         required:true
-    }, comentarios:[commentSchema]
+    }, 
+    conmentarios:[commentSchema]
 });
 
 module.exports= mongoose.model('Estudiante',esquemaEstudiante);
