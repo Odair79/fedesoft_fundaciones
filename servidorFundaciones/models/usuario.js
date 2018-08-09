@@ -20,5 +20,5 @@ var usuario=new Esquema({
         default:false,
     }
 });
-usuario.plugin(passportLocalMongoose);
+usuario.plugin(passportLocalMongoose); 
 module.exports=mongoose.model('Usuario',usuario);
