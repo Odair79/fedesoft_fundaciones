@@ -1,0 +1,1 @@
+web MONGO_DEV=mongodb+srv://analytics:analytics-password@mflix-ru0a7.mongodb.net/test?retryWrites=true node ./bin/www
